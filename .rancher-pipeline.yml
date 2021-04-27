@@ -16,7 +16,7 @@ stages:
   steps:
   - applyAppConfig:
       catalogTemplate: p-jqjbc:folijet-helmcharts-mod-pubsub
-      version: 0.1.32
+      version: 0.1.31
       answers:
         image.repository: docker.dev.folio.org/mod-pubsub
         image.tag: vega-modpubsub-78
