@@ -9,18 +9,18 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: docker.dev.folio.org/mod-pubsub:folijet-${CICD_EXECUTION_SEQUENCE}
+      tag: docker.dev.folio.org/mod-pubsub:vega-modpubsub-78
       pushRemote: true
       registry: docker.dev.folio.org
 - name: Deploy
   steps:
   - applyAppConfig:
-      catalogTemplate: p-gh7sb:folijet-helmcharts-mod-pubsub
-      version: 0.1.30
+      catalogTemplate: p-jqjbc:folijet-helmcharts-mod-pubsub
+      version: 0.1.32
       answers:
         image.repository: docker.dev.folio.org/mod-pubsub
-        image.tag: folijet-${CICD_EXECUTION_SEQUENCE}
-      targetNamespace: folijet
+        image.tag: vega-modpubsub-78
+      targetNamespace: vega
       name: mod-pubsub
 timeout: 60
 notification: {}
